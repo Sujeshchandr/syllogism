@@ -19,7 +19,7 @@ namespace SYLLOGISM
     public partial class HomePage : Form
     {
         #region PRIVATEVARIABLES
-        private  int CurrentPageNumber = -1;
+        private int CurrentPageNumber = -1;
         System.Windows.Forms.Timer WinTimer = null;
         STEP1Controller step1Controller = new STEP1Controller();
         STEP2Controller step2Controller = new STEP2Controller();
@@ -107,7 +107,7 @@ namespace SYLLOGISM
         public string Statement1Predicate { get; set; }
         public string Statement2Predicate { get; set; }
         public string Statement3Predicate { get; set; }
-       
+
         public string Conclusion1Type { get; set; }
         public string Conclusion2Type { get; set; }
         public string Conclusion3Type { get; set; }
@@ -165,8 +165,8 @@ namespace SYLLOGISM
             if (Conclusion1Subject.ToUpper() != "INVALID TYPE" || Conclusion1Predicate.ToUpper() != "INVALID TYPE")
             {
                 // ToD0 :- Check Which of the given statements having this suject and predicate by conclusion.
-                string[] allStatements = new string[] {Statement1, Statement2, Statement3};
-                string[] sortedStatements = new string[] {};
+                string[] allStatements = new string[] { Statement1, Statement2, Statement3 };
+                string[] sortedStatements = new string[] { };
                 sortedStatements = SyllogismRules.GetPairedStatementsByConclusion(allStatements, Conclusion1);
             }
 
@@ -243,14 +243,14 @@ namespace SYLLOGISM
         private void button2_Click(object sender, EventArgs e)
         {
             lblResult.Text = GetResult();
-           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Statement1 = txtStatement1.Text;
             Statement2 = txtStatement2.Text;
-             Statement s1 = new Statement(Statement1);
+            Statement s1 = new Statement(Statement1);
             Statement s2 = new Statement(Statement2);
 
             StatementPair testPair = new StatementPair(s1, s2);
@@ -259,20 +259,20 @@ namespace SYLLOGISM
             {
                 lblResult.Text = "Aligned Statements are : " + "\n\n" +
                                   "1 ) " + testPair.Statement1.StatementName + "\n" +
-                                  "2 ) " + testPair.Statement2.StatementName + "\n\n" + 
-                                  "Result : "+testPair.ResultStatement.StatementName;
+                                  "2 ) " + testPair.Statement2.StatementName + "\n\n" +
+                                  "Result : " + testPair.ResultStatement.StatementName;
             }
             else
             {
-                lblResult.Text = "Aligned Statements are : " +"\n\n" + 
+                lblResult.Text = "Aligned Statements are : " + "\n\n" +
                                   "1 ) " + testPair.Statement1.StatementName + "\n" +
                                   "2 ) " + testPair.Statement2.StatementName + "\n\n" +
                                   "Result : No Result of TYPE " + testPair.Statement1.PropositionType + " + " + testPair.Statement2.PropositionType + " !";
-                                             
-                                 
-                                
+
+
+
             }
-           
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -282,7 +282,7 @@ namespace SYLLOGISM
             Statement3 = txtStatement3.Text;
 
             Conclusion1 = txtConclusion1.Text;
-            
+
             Statement s1 = new Statement(Statement1.ToUpper().Trim());
             Statement s2 = new Statement(Statement2.ToUpper().Trim());
             Statement s3 = new Statement(Statement3.ToUpper().Trim());
@@ -304,38 +304,38 @@ namespace SYLLOGISM
                 StatementList.Add(s3);
             }
 
-            Conclusion c1 = null;           
-          
+            Conclusion c1 = null;
+
             if (!String.IsNullOrEmpty(Conclusion1.Trim()))
             {
 
                 c1 = new Conclusion(Conclusion1.ToUpper().Trim(), StatementList);
-               
+
             }
             IList<Statement> sList = new List<Statement>();
-            StatementList = CorrespondingPair.GetCorrespondingAlignedStatementsByConclusion(c1, StatementList,out sList);
+            StatementList = CorrespondingPair.GetCorrespondingAlignedStatementsByConclusion(c1, StatementList, out sList);
 
-           if (StatementList.Count == 1)
-           {
-               lblResult.Text = "Corresponding Statement is : " + "\n\n" +
-                                  "1 ) " + StatementList[0].StatementName.ToUpper() + "\n";                                 
-                                  
-           }
-           else if (StatementList.Count == 2)
-           {
-               lblResult.Text = "Corresponding Statements are : " + "\n\n" +
+            if (StatementList.Count == 1)
+            {
+                lblResult.Text = "Corresponding Statement is : " + "\n\n" +
+                                   "1 ) " + StatementList[0].StatementName.ToUpper() + "\n";
+
+            }
+            else if (StatementList.Count == 2)
+            {
+                lblResult.Text = "Corresponding Statements are : " + "\n\n" +
+                                   "1 ) " + StatementList[0].StatementName.ToUpper() + "\n" +
+                                   "2 ) " + StatementList[1].StatementName.ToUpper() + "\n";
+
+
+            }
+            else if (StatementList.Count == 3)
+            {
+                lblResult.Text = "Corresponding Statements are : " + "\n\n" +
                                   "1 ) " + StatementList[0].StatementName.ToUpper() + "\n" +
-                                  "2 ) " + StatementList[1].StatementName.ToUpper() + "\n";
-                                  
-
-           }
-           else if (StatementList.Count == 3)
-           {
-               lblResult.Text = "Corresponding Statements are : " + "\n\n" +
-                                 "1 ) " + StatementList[0].StatementName.ToUpper() + "\n" +
-                                 "2 ) " + StatementList[1].StatementName.ToUpper() + "\n" +
-                                 "3 ) " + StatementList[2].StatementName.ToUpper() + "\n";  
-           }
+                                  "2 ) " + StatementList[1].StatementName.ToUpper() + "\n" +
+                                  "3 ) " + StatementList[2].StatementName.ToUpper() + "\n";
+            }
 
         }
 
@@ -377,7 +377,7 @@ namespace SYLLOGISM
 
             }
             IList<Statement> sList = new List<Statement>();
-            StatementList = CorrespondingPair.GetCorrespondingAlignedStatementsByConclusion(c2, StatementList,out sList);
+            StatementList = CorrespondingPair.GetCorrespondingAlignedStatementsByConclusion(c2, StatementList, out sList);
 
             if (StatementList.Count == 1)
             {
@@ -442,7 +442,7 @@ namespace SYLLOGISM
 
             }
             IList<Statement> sList = new List<Statement>();
-            StatementList = CorrespondingPair.GetCorrespondingAlignedStatementsByConclusion(c3, StatementList,out sList);
+            StatementList = CorrespondingPair.GetCorrespondingAlignedStatementsByConclusion(c3, StatementList, out sList);
 
             if (StatementList.Count == 1)
             {
@@ -536,7 +536,7 @@ namespace SYLLOGISM
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            
+
             StartSlideShow();
         }
 
@@ -577,9 +577,9 @@ namespace SYLLOGISM
         }
 
         private void LOADPREVIEWCOTROLLER()
-        
-        { 
-           
+
+        {
+
             switch (CurrentPageNumber)
             {
                 case 0:
@@ -587,7 +587,7 @@ namespace SYLLOGISM
                     break;
 
                 case 1:
-                    LoadSTEP2PREVIEW();                  
+                    LoadSTEP2PREVIEW();
                     break;
 
                 case 2:
@@ -600,12 +600,12 @@ namespace SYLLOGISM
                     break;
 
             }
-           
+
         }
 
         private void LoadSTEP1PREVIEW()
         {
-           //STEP1Controller pc = new STEP1Controller();
+            //STEP1Controller pc = new STEP1Controller();
             pnlPreview.Visible = false;
             step1Controller.Location = pnlPreview.Location;
             step1Controller.Size = pnlPreview.Size;
@@ -639,11 +639,16 @@ namespace SYLLOGISM
         }
 
         private string GetResult()
-        {            
+        {
 
             Statement s1 = new Statement(Statement1);
             Statement s2 = new Statement(Statement2);
             Statement s3 = new Statement(Statement3);
+
+            label6.Text = s1.PropositionType + " TYPE";
+            label9.Text = s2.PropositionType + " TYPE";
+            label10.Text = s3.PropositionType + " TYPE";
+
             IList<Statement> StatementList = new List<Statement> { };
 
             if (!String.IsNullOrEmpty(Statement1))
@@ -690,7 +695,7 @@ namespace SYLLOGISM
             }
 
             pList = new PropositionList(StatementList, ConclusionList);
-        
+
             var result = string.Empty;
             int syllogismResult = (int)pList.Result;
 
@@ -987,11 +992,11 @@ namespace SYLLOGISM
 
                     }
                     #endregion
-                    break;               
-                default: 
+                    break;
+                default:
                     #region DEFAULT
                     result = "Enter four conclusions";
-                #endregion
+                    #endregion
                     break;
             }
             return result;
@@ -1000,8 +1005,8 @@ namespace SYLLOGISM
         private void SetTimeInterval(int time)
         {
             TimerInterval = time;
-        } 
-        
+        }
+
         private int GetTimeInterval()
         {
 
@@ -1037,7 +1042,7 @@ namespace SYLLOGISM
 
         private void pbSlideShow_Click(object sender, EventArgs e)
         {
-            if (slideshowEnable) 
+            if (slideshowEnable)
             {
                 StopSlideShow();
             }
@@ -1045,10 +1050,10 @@ namespace SYLLOGISM
             {
                 StartSlideShow();
             }
-           
+
         }
-     
-        }
-     
+
     }
+
+}
 

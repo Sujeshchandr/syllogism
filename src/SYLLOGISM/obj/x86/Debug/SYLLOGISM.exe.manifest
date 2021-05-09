@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SYLLOGISM.exe" size="156160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SYLLOGISM.exe" size="156672">
       <assemblyIdentity name="SYLLOGISM" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Atdnw7m+7+GCP5bbmV4wQBBKPWw=</dsig:DigestValue>
+        <dsig:DigestValue>9FgrRC91XPGA4XlzZwXOfz+s+oI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

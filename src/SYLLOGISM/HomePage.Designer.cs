@@ -58,6 +58,9 @@
             this.pbStep1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbSlideShow = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnlParent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStep2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStep1)).BeginInit();
@@ -309,7 +312,7 @@
             this.pnlPreview.ForeColor = System.Drawing.Color.Blue;
             this.pnlPreview.Location = new System.Drawing.Point(8, 7);
             this.pnlPreview.Name = "pnlPreview";
-            this.pnlPreview.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnlPreview.Padding = new System.Windows.Forms.Padding(5);
             this.pnlPreview.Size = new System.Drawing.Size(639, 458);
             this.pnlPreview.TabIndex = 32;
             this.pnlPreview.Visible = false;
@@ -364,6 +367,33 @@
             this.pbSlideShow.TabStop = false;
             this.pbSlideShow.Click += new System.EventHandler(this.pbSlideShow_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(399, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "label6";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(399, 71);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(399, 97);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "label10";
+            // 
             // HomePage
             // 
             this.AcceptButton = this.button2;
@@ -372,6 +402,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
             this.ClientSize = new System.Drawing.Size(470, 383);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlParent);
             this.Controls.Add(this.btnPreview);
@@ -447,6 +480,9 @@
         private System.Windows.Forms.PictureBox pbStep2;
         private System.Windows.Forms.PictureBox pbStep1;
         private System.Windows.Forms.PictureBox pbSlideShow;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 
