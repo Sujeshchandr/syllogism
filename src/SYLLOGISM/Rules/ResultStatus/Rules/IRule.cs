@@ -8,15 +8,15 @@ namespace SYLLOGISM.Rules.ResultStatus.Rules
 {
     public interface IRule<T>
     {
-        public SyllogismRules.ConclusionValidity c1validity { get; set; }
+        SyllogismRules.ConclusionValidity c1validity { get; set; }
 
-        public SyllogismRules.ConclusionValidity c2validity { get; set; }
+        SyllogismRules.ConclusionValidity c2validity { get; set; }
 
-        public Conclusion c1 { get; set; }
+        Conclusion c1 { get; set; }
 
-        public Conclusion c2 { get; set; }
+        Conclusion c2 { get; set; }
 
-        bool IsSatisfied(Conclusion c2, Conclusion c2);
+        bool IsSatisfied(Conclusion c1, Conclusion c2);
         
     }
 }

@@ -7,7 +7,7 @@ using SYLLOGISM.Rules.ResultStatus.Rules;
 
 namespace SYLLOGISM.Rules.ResultStatus.Rules
 {
-    public class NotRole<T> : Rules.IRule
+    public class NotRole<T> : Rules.IRule<T>
     {
         public SyllogismRules.ConclusionValidity c1validity { get; set; }
 

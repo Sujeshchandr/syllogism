@@ -6,7 +6,7 @@ using SYLLOGISM.Models;
 
 namespace SYLLOGISM.Rules.ResultStatus.Rules
 {
-   public class OrRule<T> :IRule
+   public class OrRule<T> :IRule<T>
     {
         public SyllogismRules.ConclusionValidity c1validity { get; set; }
 
