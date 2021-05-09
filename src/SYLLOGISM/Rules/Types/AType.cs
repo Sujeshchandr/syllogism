@@ -28,9 +28,7 @@ namespace SYLLOGISM.Rules.Types
         }
 
         public static bool IsTrue(string statement)
-        {         
-             
-          
+        {
             if (!String.IsNullOrEmpty(statement.Trim()))
             {
                 if (statement.Split(' ')[0].ToUpper() == ALL)

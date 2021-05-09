@@ -20,6 +20,7 @@ namespace SYLLOGISM.Models
 
        public Statement(string statement)
        {
+           statement = statement.Trim().Trim('.');
            StatementName = statement;
            PopulateAllProperties();
        }
