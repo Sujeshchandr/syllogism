@@ -19,7 +19,7 @@ namespace SYLLOGISM.Rules.Types
 
         public  static string GetPropositionType()
         {
-            return "A";
+            return "A" ;
         }
 
         public  static string GetStatementTemplate()
