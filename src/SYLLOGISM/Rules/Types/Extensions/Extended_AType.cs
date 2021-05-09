@@ -7,7 +7,7 @@ namespace SYLLOGISM.Rules.Types
     public static class Extended_AType
     {
         #region PRIVATECONSTANTS
-        private const string ALL = "ALL";
+        private const string ALL = "ALL"; 
         private const string NOT = "NOT";
         private const string SOME = "SOME";
         private const string Template = "ALL <<STATEMENT>> ARE <<PREDICATE>>";
